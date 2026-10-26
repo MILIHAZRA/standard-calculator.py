@@ -24,7 +24,7 @@ This application is powered by Python’s built-in "Tkinter" library. Here is a 
 3. Event Handling & Logic:
    - Each button is linked ('command=...') to specific Python functions. 
    - When a number or operator is pressed, it appends to a running string expression.
-   - When the equals ('=') button is triggered, Python safely evaluates the expression (using built-in logic or ) and renders the computed result onto the screen.
+   - When the equals ('=') button is triggered, Python safely evaluates the expression (using built-in logic) and renders the computed result onto the screen.
 
 4. Expression Evaluation & Safety: Listens for button clicks, appends inputs to construct expressions, dynamically updates the display screen, and safely handles math errors like division by zero.
 
