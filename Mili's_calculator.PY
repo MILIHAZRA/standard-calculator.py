@@ -84,39 +84,51 @@ for (text, r, c, color, cmd) in buttons:
               bg=color, fg="white", font=("Arial", 16, "bold"),
               bd=0, highlightthickness=0, command=cmd).grid(row=r, column=c, padx=5, pady=5)
 
-
 import operator
 def standard_calculator():
     op=input("enter the operation you wanna doing:+,-,*,/,root,percentage,mod")
-    num1=input("enter the first number:")
-    num2=input("enter the second number:")
+    num1=float(input("enter the first number:"))
+    num2=float(input("enter the second number:"))
     if op=='+':
         result=operator.add(num1,num2)
     elif op=='-':
         if num1<num2 :
-           result=operator.subtract(num2,num1)
+           result=operator.sub(num2,num1)
         elif num2<num1:
-            result=operator.subtract(num1,num2)
+            result=operator.sub(num1,num2)
     elif op=='*':
         result=operator.mul(num1,num2)
     elif op=='/':
-        resilt=operator.truediv(num1,num2)
+        if num2 == 0:
+            print("Error: Cannot divide by zero.")
+            return
+        result=operator.truediv(num1,num2)
     elif op=="root":
+        if num2 == 0:
+                 print("Error: Cannot divide by zero.")
+                 return
         result=math.sqrt(num1)
     elif op=='percentage':
+        if num2 == 0:
+                 print("Error: Cannot divide by zero.")
+                 return
         result=num1/num2*100
     elif op =='mod':
+        if num2 == 0:
+                 print("Error: Cannot divide by zero.")
+                 return
         result=num1%num2
     else:
         print("invalid number")
         print("thank you, please try again later")
-def check_num(float_or_int):
+ def check_num(float_or_int):
     try:
         numbers=float(float_or_int)
         return True
     except :
         return False
-    
+if __name__ == "__main__":
+    standard_calculator()   
 root.mainloop()
 
 
@@ -125,18 +137,4 @@ root.mainloop()
 
 
 
-    
-
-
-
-
-
-
-
-
-
-
-           
-
-  
 
