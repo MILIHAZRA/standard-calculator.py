@@ -9,6 +9,14 @@ MIli's calculator.png
 - Supports standard and advanced arithmetic operations: Addition(+), Subtraction(-), Multiplication(*), Division(/),modulus(mod),square root,percentage(%)
 - Clean grid layout for effortless calculation flow.
 - Custom Dark & Orange Theme: Designed with a dark mode background, high-contrast orange operator buttons(+,-,*,/), light gray utility keys(C,mod,root), and dark gray number keys(0-9)
+- It can also store your history in a table format where the id is a primary key and 1st column of integer type, expression defines your calculation that you want to do perform which text type and result which stores your result as a text type in the databases. i use sqlite3 databases.
+
+# why sqlite3?
+- It's built into Python. The sqlite3 module ships with Python, so there's nothing to install. Anyone who clones your repo can run it right away.
+- No server needed. Databases like MySQL or PostgreSQL run as a separate service you have to set up. SQLite is just a single file (history.db) that your program reads and writes directly.
+- It's reliable. Writes are transactional, so if the program crashes mid-save, you won't end up with a half-written, corrupted history.
+- You can query it. With SQL you can later do things like SELECT * FROM calc_history ORDER BY id DESC LIMIT 10 to show the last 10 calculations, or delete old entries. That's much harder with a plain text file.
+- It's a useful skill. SQL basics carry over to almost every other database you'll use later, and SQLite itself is used in phones, browsers, and many apps.
   
 # 🛠️ How It Works:
 
