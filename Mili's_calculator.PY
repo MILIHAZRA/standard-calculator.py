@@ -1,5 +1,8 @@
 import tkinter as tk
 import math
+from save_history import init_db, save_history
+
+init_db()
 
 # --- Logic Functions ---
 def add_to_display(value):
@@ -16,6 +19,7 @@ def calculate_result():
         result = eval(expression)
         entry.delete(0, tk.END)
         entry.insert(tk.END, str(result))
+        save_history(expression, str(result))
     except:
         entry.delete(0, tk.END)
         entry.insert(tk.END, "Error")
@@ -25,6 +29,7 @@ def calculate_root():
         val = float(entry.get())
         entry.delete(0, tk.END)
         entry.insert(tk.END, str(math.sqrt(val)))
+        save_history(f"{val}, str(val))
     except:
         entry.delete(0, tk.END)
         entry.insert(tk.END, "Error")
@@ -34,6 +39,7 @@ def calculate_percent():
         val = float(entry.get())
         entry.delete(0, tk.END)
         entry.insert(tk.END, str(val / 100))
+        save_history(f"{val}, str(val))
     except:
         entry.delete(0, tk.END)
 
